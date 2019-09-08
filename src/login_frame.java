@@ -56,7 +56,7 @@ usern.setText(""); pass1.setText("");
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         usern.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        usern.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 255, 0)));
+        usern.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         usern.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernActionPerformed(evt);
@@ -64,7 +64,7 @@ usern.setText(""); pass1.setText("");
         });
 
         pass1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        pass1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 255)));
+        pass1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pass1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pass1ActionPerformed(evt);
@@ -80,11 +80,9 @@ usern.setText(""); pass1.setText("");
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 51));
         jLabel1.setText("UserName:");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 255, 51));
         jLabel2.setText("UserName:");
 
         jButton2.setForeground(new java.awt.Color(204, 0, 0));
