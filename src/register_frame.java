@@ -215,7 +215,7 @@ if(ps1.equals(ps2)){
       JOptionPane.showMessageDialog(rootPane, "UserName Already Exist","message",JOptionPane.WARNING_MESSAGE); 
     }
     else{
-       JOptionPane.showMessageDialog(rootPane, "Succesfully Registered"); new login_frame().setVisible(true); this.setVisible(false);clearReg();
+       JOptionPane.showMessageDialog(rootPane, "Succesfully Registered");this.setVisible(false);clearReg(); new login_frame().setVisible(true);
     }
    }else{
      JOptionPane.showMessageDialog(rootPane, "Passwords aren't matched","message",JOptionPane.WARNING_MESSAGE); 

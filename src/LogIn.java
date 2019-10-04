@@ -18,25 +18,21 @@ import java.util.logging.Logger;
  * @author Acer
  *//////
 public class LogIn {
-    String forname=  "com.mysql.jdbc.Driver";
-   String driver = "jdbc:mysql://localhost/bsit23";
-   String us = "root";
-   String ps1 ="";
-   String name;
+Connection_class con = new Connection_class();
    
    public int Enter(String uname, String pword){int x=0;
        try {
-           Class.forName(forname);
-           Connection con = DriverManager.getConnection(driver,us,ps1);
-           PreparedStatement pss = con.prepareStatement("Select * from user where username = ? and password = md5(?)");
+           Class.forName(con.forname);
+           Connection cnn = DriverManager.getConnection(con.driver,con.us,con.ps1);
+           PreparedStatement pss = cnn.prepareStatement("Select * from user where username = ? and password = md5(?)");
            pss.setString(1, uname);
            pss.setString(2,pword );
            ResultSet rs = pss.executeQuery();
            if(rs.next()){
                x=1;
-               name = rs.getString("first_name")+" "+rs.getString("last_name");
+               
            }else{
-               x=-1;
+               x=0;
            }
            
        } catch (ClassNotFoundException ex) {

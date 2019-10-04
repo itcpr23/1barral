@@ -1,5 +1,5 @@
 
-import javax.swing.JFrame;
+
 import javax.swing.JOptionPane;
 
 /*
@@ -19,21 +19,22 @@ String name ="";
      * Creates new form login_frame
      */
     public login_frame() {
-        initComponents();this.setLocationRelativeTo(null);
+        initComponents();
+        this.setLocationRelativeTo(null);
     }
 public void login(){
     String un = usern.getText();
 String pw = new String(pass1.getPassword());
 int x = log.Enter(un, pw);
-if(x==1){ name = log.name;
+if(x==1){
 this.setVisible(false);
-new homepage(name).setVisible(true); 
-    
+new Product_frame().setVisible(true);
 }else{
     JOptionPane.showMessageDialog(rootPane, "Account NOT Found","Message",JOptionPane.ERROR_MESSAGE);
 }
 usern.setText(""); pass1.setText("");
 }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -56,6 +57,7 @@ usern.setText(""); pass1.setText("");
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         usern.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        usern.setForeground(new java.awt.Color(153, 153, 153));
         usern.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         usern.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,7 +73,6 @@ usern.setText(""); pass1.setText("");
             }
         });
 
-        jButton1.setForeground(new java.awt.Color(255, 51, 51));
         jButton1.setText("Register");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +86,6 @@ usern.setText(""); pass1.setText("");
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("UserName:");
 
-        jButton2.setForeground(new java.awt.Color(204, 0, 0));
         jButton2.setText("LOG IN");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +114,7 @@ usern.setText(""); pass1.setText("");
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(122, 122, 122))
+                .addGap(121, 121, 121))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,9 +127,9 @@ usern.setText(""); pass1.setText("");
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pass1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(37, 37, 37)
+                .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
