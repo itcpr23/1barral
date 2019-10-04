@@ -37,6 +37,21 @@ Connection_class con = new Connection_class();
         Logger.getLogger(Product_Class.class.getName()).log(Level.SEVERE, null, ex);
     }return x;
     } 
+  public void Product_Delete(int id){
+
+    try{
+        Class.forName(con.forname);
+        Connection ccon = DriverManager.getConnection(con.driver,con.us,con.ps1);
+        PreparedStatement prep = ccon.prepareStatement("delete from products where id = ?");
+        prep.setInt(1, id);
+        prep.executeUpdate();
+        
+    } catch (ClassNotFoundException ex) {
+        Logger.getLogger(Product_Class.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (SQLException ex) {
+        Logger.getLogger(Product_Class.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }
  
     }  
 

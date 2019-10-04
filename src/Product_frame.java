@@ -63,6 +63,7 @@ Product_Class prod = new Product_Class();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         add_product.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         add_product.setMinimumSize(new java.awt.Dimension(420, 351));
@@ -198,6 +199,13 @@ Product_Class prod = new Product_Class();
             }
         });
 
+        jButton5.setText("Delete");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -209,7 +217,9 @@ Product_Class prod = new Product_Class();
                         .addComponent(jButton1))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 24, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -224,6 +234,8 @@ Product_Class prod = new Product_Class();
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton5)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -276,6 +288,23 @@ if(x==1){
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+int tbl = jTable1.getSelectedRow();
+if(tbl==-1){
+  JOptionPane.showMessageDialog(rootPane, "Please Select Product", "ERROR MESSAGE", JOptionPane.ERROR_MESSAGE);  
+}else{
+    String s = jTable1.getValueAt(tbl, 1).toString();
+    int a = JOptionPane.showConfirmDialog(rootPane, "Want to delete "+s+"\nClick  'OK'  to continue","CONFIRMATION",JOptionPane.OK_CANCEL_OPTION);
+    if(a==JOptionPane.OK_OPTION){
+        int x = JOptionPane.showConfirmDialog(rootPane, "Do you really want to Delete "+s,"CONFIRMATION",JOptionPane.YES_NO_OPTION);
+        if(x==JOptionPane.YES_OPTION){
+            prod.Product_Delete(Integer.parseInt(jTable1.getValueAt(tbl, 0).toString()));
+            refresh_data();
+      } 
+    }
+}        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -317,6 +346,7 @@ if(x==1){
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
